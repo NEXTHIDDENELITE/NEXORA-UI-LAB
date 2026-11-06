@@ -1,9 +1,1 @@
-const themeToggle = document.getElementById("themeToggle");
-const savedTheme = localStorage.getItem("nexora-theme");
-if (savedTheme === "light") document.body.classList.add("light");
-themeToggle?.addEventListener("click", () => {
-  document.body.classList.toggle("light");
-  localStorage.setItem("nexora-theme", document.body.classList.contains("light") ? "light" : "dark");
-});
-const year = document.getElementById("year");
-if (year) year.textContent = new Date().getFullYear();
+const year=document.getElementById("year");if(year)year.textContent=new Date().getFullYear();const menu=document.getElementById("menuBtn");const nav=document.getElementById("nav");menu?.addEventListener("click",()=>nav.classList.toggle("open"));nav?.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")));const form=document.getElementById("contactForm");const hint=document.getElementById("formHint");form?.addEventListener("submit",e=>{e.preventDefault();if(!form.reportValidity())return;hint.textContent="Your enquiry preview is ready, but this demo site has no connected mail or backend service yet. No information has been sent or stored.";hint.style.color="#72e8df";});
